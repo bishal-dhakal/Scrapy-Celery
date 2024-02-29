@@ -8,7 +8,7 @@ from scrapy import settings
 from twisted.internet import reactor
 from billiard import Process
 from scrapy.utils.project import get_project_settings
-from trending.spiders import Ekantipur,Gorkhapatra
+from trending.spiders import Ekantipur,Gorkhapatra,Annapurna,Bbc,HimalayanTimes,KathmanduPost,Nagarik,Onlinekhabar,Ratopati,republica
 from celery import Celery
 from celery.schedules import crontab
 from celery.utils.log import get_task_logger
@@ -24,7 +24,18 @@ app.conf.beat_schedule = {
     },
 }
 
-spiders = [Ekantipur.Ekantipur,Gorkhapatra.gorkhapatra]
+spiders = [
+        Ekantipur.Ekantipur,
+        Gorkhapatra.gorkhapatra,
+        Annapurna.Annapurna,
+        Bbc.Bbc,
+        HimalayanTimes.himalayan_times,
+        KathmanduPost.KathmanduPost,
+        Nagarik.Nagarik,
+        Onlinekhabar.onlinekhabar,
+        Ratopati.Ratopati,
+        republica.myRepublica
+        ]
 
 logger = get_task_logger(__name__)
 loggers = logging.getLogger('celery.worker')
