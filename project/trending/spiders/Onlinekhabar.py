@@ -42,7 +42,7 @@ class onlinekhabar(scrapy.Spider):
             "is_recent":True,
             "category_name":'others',
             "source_name":'onlinekhabar',
-            "is_trending":True
+            'is_trending':True 
             }
         
         PostNews.postnews(news)
